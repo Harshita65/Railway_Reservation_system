@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/style/style.css">
+    </head>
+    <body class="rail-bg3">
+        <div>
+            <div id="mytopnav" class = "topnav">
+                <div id="mytopnav" class = "topnav">
+                    <div id="navtext"><a href="Railway.html" >Home</a></div> 
+                    <div id="navtext"><a href="Railway_PNR.html">PNR Enquiry</a></div>
+                    <div id="navtext"><a href="Railway_tickets.html">Book Tickets</a></div>
+                    <div id="navtext"><a href="#Freight Services">Freight Services</a></div>
+                    <div id="navtext"><a href="railway_register.php" >Login/Register</a></div>
+            <div id ="ticket_glass"><h1 id="ticket_heading">Pick your Route!</h1>
+               <select name="routes" id="routes"> 
+                   <option>Choose train</option>
+                   <option>Vasco da Gama (Goa) to Londa (Karnataka)</option>
+                   <option> New Jalpaiguri (West Bengal), Tinsukia , Ledo (Assam)</option>
+                   <option> Madgaon (Goa) to Mumbai</option>
+                   <option>Mumbai to Delhi</option>
+                   <option>Kanyakumari (Tamil Nadu) to Trivandrum (Kerala)</option>
+                   <option> Kalka (Haryana) to Shimla (Himachal Pradesh)</option>
+                   <option>Jammu to Udhampur (Jammu state)</option>
+                   <option>Bangalore (Karnataka) to Goa</option>
+                   <option> New Jalpaiguri to Darjeeling (West Bengal)</option>
+                   <option>New Delhi to Kanpur</option>
+               </select>
+               <button id="check_PNR" onclick="Tickets()">Submit</button>
+               <script>
+                   function Tickets(){
+                       alert("Tickets Booked Successfully!");
+                   }
+               </script>
+               </form>
+            </div>
+        </div>  
+    </body>
+</html>

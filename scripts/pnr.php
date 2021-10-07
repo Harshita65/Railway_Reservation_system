@@ -1,12 +1,36 @@
 <?php
- $servername = "localhost";
- $username = "admin";
- $password = "adminpass";
- $dbname = ""; 
- $conn = new mysqli($servername, $username, $password,$dbname); 
+ require_once 'db_con.php';
+ $pnr = "5568372981";
+$result = mysqli_query($conn,"SELECT * FROM pnr WHERE pnr = '$pnr' " );
 
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
+echo "<table border='1'>
+<tr>
+<th>PNR Number</th>    
+<th>Train Number</th>
+    <th>Train Name</th>
+    <th>Boarding Date(DD-MM-YYY)</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Reserved Upto</th>
+    <th>Boarding Point</th>
+    <th>Class</th>
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+{
+    echo "<tr>";
+    echo "<td>" . $row['pnr'] . "</td>";
+    echo "<td>" . $row['train_number'] . "</td>";
+    echo "<td>" . $row['train_name'] . "</td>";
+    echo "<td>" . $row['boarding_date'] . "</td>";
+    echo "<td>" . $row['from'] . "</td>";
+    echo "<td>" . $row['to'] . "</td>";
+    echo "<td>" . $row['reserved_upto'] . "</td>";
+    echo "<td>" . $row['boarding_point'] . "</td>";
+    echo "<td>" . $row['class'] . "</td>";
+    echo "</tr>";
 }
-echo "Connected successfully".'<br>';
+echo "</table>";
+
+mysqli_close($conn);
 ?>

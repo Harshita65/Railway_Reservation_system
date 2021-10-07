@@ -26,6 +26,8 @@
                 <th>Boarding Point</th>
                 <th>Class</th>
             </tr>
+
+            
             <tr>
                 <td>12089</td>
                 <td>Chennai Express</td>

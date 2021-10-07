@@ -12,19 +12,19 @@
                     <div id="navtext"><a href="#Freight Services">Freight Services</a></div>
                     <div id="navtext"><a href="railway_register.php" >Login/Register</a></div>
             <div id ="ticket_glass"><h1 id="ticket_heading">Pick your Route!</h1>
-               <select name="routes" id="routes"> 
+               <select name="routes" id="routes">
                    <option>Choose train</option>
-                   <option>Vasco da Gama (Goa) to Londa (Karnataka)</option>
-                   <option> New Jalpaiguri (West Bengal), Tinsukia , Ledo (Assam)</option>
-                   <option> Madgaon (Goa) to Mumbai</option>
-                   <option>Mumbai to Delhi</option>
-                   <option>Kanyakumari (Tamil Nadu) to Trivandrum (Kerala)</option>
-                   <option> Kalka (Haryana) to Shimla (Himachal Pradesh)</option>
-                   <option>Jammu to Udhampur (Jammu state)</option>
-                   <option>Bangalore (Karnataka) to Goa</option>
-                   <option> New Jalpaiguri to Darjeeling (West Bengal)</option>
-                   <option>New Delhi to Kanpur</option>
+                   <option>Mumbai Central to New Delhi</option>
+                   <option>Ludhiana to New Delhi</option>
+                   <option>Madgaon to Mumbai</option>
+                   <option>Kanyakumari to Trivandrum</option>
+                   <option>Jaipur to Udaipur City</option>
+                   <option>Bangalore to Goa</option> 
                </select>
+                <form>
+                    <label id="journey" for="Date">Pick a date:</label>
+                    <input type="date" id="date" >
+                </form>
                <button id="check_PNR" onclick="Tickets()">Submit</button>
                <script>
                    function Tickets(){

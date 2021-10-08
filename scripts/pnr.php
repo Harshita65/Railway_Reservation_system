@@ -1,11 +1,30 @@
 <?php
  require_once 'db_con.php';
- $pnr = "5568372981";
+ if(isset($_POST['btn_submit']))
+ {
+$pnr = mysqli_real_escape_string($conn,$_POST['pnr_number']);
 $result = mysqli_query($conn,"SELECT * FROM pnr WHERE pnr = '$pnr' " );
 
-echo "<table border='1'>
+echo "
+
+<html>
+    <head>
+        <link rel='stylesheet' href='../assets/style/style.css'>
+    </head>
+    <body class='rail-bg6'>
+            
+                <div id='mytopnav' class = 'topnav'>
+                    <div id='navtext'><a href='Railway.html' >Home</a></div> 
+                    <div id='navtext'><a href='Railway_PNR.html'>PNR Enquiry</a></div>
+                    <div id='navtext'><a href='Railway_tickets.html'>Book Tickets</a></div>
+                    <div id='navtext'><a href='#Freight Services'>Freight Services</a></div>
+                    <div id='navtext'><a href='railway_register.php' >Login/Register</a></div>
+                </div>
+            
+        <div id ='pnrcheck_glass'>    
+        <h2 id='pnrcheck_heading'>Passenger Current status</h2>
+<table id='table'>
 <tr>
-<th>PNR Number</th>    
 <th>Train Number</th>
     <th>Train Name</th>
     <th>Boarding Date(DD-MM-YYY)</th>
@@ -19,7 +38,6 @@ echo "<table border='1'>
 while($row = mysqli_fetch_array($result))
 {
     echo "<tr>";
-    echo "<td>" . $row['pnr'] . "</td>";
     echo "<td>" . $row['train_number'] . "</td>";
     echo "<td>" . $row['train_name'] . "</td>";
     echo "<td>" . $row['boarding_date'] . "</td>";
@@ -30,7 +48,13 @@ while($row = mysqli_fetch_array($result))
     echo "<td>" . $row['class'] . "</td>";
     echo "</tr>";
 }
-echo "</table>";
+echo "</table>
+</div> 
+</div>    
 
+</body>
+</html>
+";
+}
 mysqli_close($conn);
 ?>

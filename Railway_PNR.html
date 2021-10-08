@@ -12,9 +12,11 @@
                     <div id="navtext"><a href="#Freight Services">Freight Services</a></div>
                     <div id="navtext"><a href="railway_register.php" >Login/Register</a></div>
             <div id ="PNR_glass"><h1 id="PNR_heading">Enter PNR to get current status</h1>
-               <form><label id="PNR_num">Enter PNR:</label>
-               <input id="PNR_input" type="text"  value="10 digits"/><br>
-               <button id="check_PNR">Check</button>
+               <form action="scripts/pnr.php" method="POST">
+                   <label id="PNR_num">
+                   Enter PNR:</label>
+               <input name="pnr_number" id="PNR_input" type="number" maxlength="10"  minlength="10" value="10 digits" required/><br>
+               <button id="check_PNR" type="submit" name="btn_submit">Check</button>
                </form>
             </div>
         </div>  

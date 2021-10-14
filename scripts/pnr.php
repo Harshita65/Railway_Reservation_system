@@ -3,7 +3,8 @@
  if(isset($_POST['btn_submit']))
  {
 $pnr = mysqli_real_escape_string($conn,$_POST['pnr_number']);
-$result = mysqli_query($conn,"SELECT * FROM pnr WHERE pnr = '$pnr' " );
+$sql = "select * FROM pnr INNER JOIN train_details ON train_details.train_number = pnr.train_number WHERE pnr = '$pnr'";
+$result = mysqli_query($conn,$sql );
 
 echo "
 
@@ -30,9 +31,7 @@ echo "
     <th>Boarding Date(DD-MM-YYY)</th>
     <th>From</th>
     <th>To</th>
-    <th>Reserved Upto</th>
-    <th>Boarding Point</th>
-    <th>Class</th>
+    
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -41,11 +40,8 @@ while($row = mysqli_fetch_array($result))
     echo "<td>" . $row['train_number'] . "</td>";
     echo "<td>" . $row['train_name'] . "</td>";
     echo "<td>" . $row['boarding_date'] . "</td>";
-    echo "<td>" . $row['from'] . "</td>";
-    echo "<td>" . $row['to'] . "</td>";
-    echo "<td>" . $row['reserved_upto'] . "</td>";
-    echo "<td>" . $row['boarding_point'] . "</td>";
-    echo "<td>" . $row['class'] . "</td>";
+    echo "<td>" . $row['t_from'] . "</td>";
+    echo "<td>" . $row['t_to'] . "</td>";
     echo "</tr>";
 }
 echo "</table>
